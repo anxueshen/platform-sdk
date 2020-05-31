@@ -12,7 +12,6 @@
 // limitations under the License.
 #include <airmap/date_time.h>
 
-#include <boost/date_time.hpp>
 #include <boost/date_time/posix_time/posix_time.hpp>
 
 #include <memory>
