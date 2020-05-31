@@ -12,6 +12,7 @@ set(CMAKE_VISIBILITY_INLINES_HIDDEN 1)
 option(AIRMAP_ENABLE_NETWORK_TESTS "enable tests requiring network access"       ON)
 option(AIRMAP_ENABLE_GRPC          "Enable libraries/executables requiring gRPC" OFF)
 option(AIRMAP_ENABLE_QT            "Enable libraries/executables requiring Qt5"  OFF)
+option(AIRMAP_ENABLE_PATHFINDING   "Enable Airmap's pathfinding function" OFF)
 
 if (AIRMAP_ENABLE_GRPC)
   add_definitions(-DAIRMAP_ENABLE_GRPC)
@@ -50,3 +51,10 @@ message(STATUS "Enabling platform ${AIRMAP_PLATFORM}")
 
 include(external.cmake)
 include(airmapd.cmake)
+
+if (AIRMAP_ENABLE_PATHFINDING)
+  execute_process(
+    COMMAND ${GIT_EXECUTABLE} clone --depth 1 https://github.com/airmap/pathfinding.git -b build-lib
+    WORKING_DIRECTORY ${CMAKE_SOURCE_DIR})
+  add_subdirectory(pathfinding/lib)
+endif ()
