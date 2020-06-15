@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.5)
+cmake_minimum_required(VERSION 3.6)
 
 # This cmake setup builds boost in a way suitable for linking with
 # the AirMap platform SDK. 
@@ -83,8 +83,8 @@ else()
 endif()
 
 ExternalProject_Add(boost
-  URL https://dl.bintray.com/boostorg/release/1.70.0/source/boost_1_70_0.tar.bz2
-  URL_HASH SHA256=430ae8354789de4fd19ee52f3b1f739e1fba576f0aded0897c3c2bc00fb38778
+  URL https://dl.bintray.com/boostorg/release/1.72.0/source/boost_1_72_0.tar.bz2
+  URL_HASH SHA256=59c9b274bc451cf91a9ba1dd2c7fdcaf5d60b1b3aa83f2c9fa143417cc660722
   BUILD_IN_SOURCE 1
   UPDATE_COMMAND ""
   PATCH_COMMAND ""
